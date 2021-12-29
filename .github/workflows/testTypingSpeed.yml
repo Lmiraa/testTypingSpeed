@@ -1,0 +1,15 @@
+name: "Publish"
+on:
+  push:
+    tags:
+      - "v*"
+      env:
+  PROJECT_PATH: src/HandySub/HandySub.csproj
+  ZIP_PATH: src/HandySub/bin/Release/net5.0-windows/win-x86/publish/HandySub-x86.zip
+  EXE_PATH: src/HandySub/bin/Release/net5.0-windows/win-x86/publish/HandySub.exe
+  jobs:
+ deploy:
+   runs-on: windows-latest
+   steps:
+     - name: Initialize Actions
+       uses: actions/checkout@v2
